@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Photographies | Alan Gaubert</title>
+		<link rel="stylesheet" href="styles/css/style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<nav>
+				<div class="logo">Mon Portfolio</div>
+				<ul class="nav-links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="photographie.html">Photographie</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<section class="section-block photo-section">
+				<h1>Ma galerie photo</h1>
+			<p class="photo-intro">Voici quelques-unes de mes photographies préférées. Clique sur une image pour l’agrandir.</p>
+			<p class="photo-desc">Ces photos ont été prises lors de différents voyages, visites de lieux, rassemblements. L'appareil que j'utilise est un Canon EOS 1200D avec le 18-55mm fournis de base.</p>
+								<div class="photo-grid">
+									<img src="images/photographie/americaine_int.JPG" alt="Voiture américaine intérieur" class="photo-thumb" onclick="openLightbox(this)" />
+									<img src="images/photographie/americain_ext.JPG" alt="Voiture américaine extérieur" class="photo-thumb" onclick="openLightbox(this)" />
+									<img src="images/photographie/assemblee_nationale.JPG" alt="Assemblée nationale" class="photo-thumb" onclick="openLightbox(this)" />
+									<img src="images/photographie/champs.JPG" alt="Champs" class="photo-thumb" onclick="openLightbox(this)" />
+									<img src="images/photographie/foudre.JPG" alt="Foudre" class="photo-thumb" onclick="openLightbox(this)" />
+									<img src="images/photographie/pairi_daiza.JPG" alt="Pairi Daiza" class="photo-thumb" onclick="openLightbox(this)" />
+									<img src="images/photographie/paysage.JPG" alt="Paysage" class="photo-thumb" onclick="openLightbox(this)" />
+									<img src="images/photographie/vaucelles.JPG" alt="Vaucelles" class="photo-thumb" onclick="openLightbox(this)" />
+								</div>
+						<div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+							<span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+							<img class="lightbox-img" id="lightbox-img" src="" alt="Photo agrandie" />
+						</div>
+		<script>
+			function openLightbox(img) {
+				document.getElementById('lightbox-img').src = img.src;
+				document.getElementById('lightbox').style.display = 'flex';
+			}
+			function closeLightbox(event) {
+				if (event.target.classList.contains('lightbox') || event.target.classList.contains('lightbox-close')) {
+					document.getElementById('lightbox').style.display = 'none';
+				}
+			}
+		</script>
+			</section>
+		</main>
+		<footer>
+			<p>&copy; 2025 Alan Gaubert. Tous droits réservés.</p>
+		</footer>
+	</body>
+</html>
