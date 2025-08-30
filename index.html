@@ -106,13 +106,12 @@
                             </ul>
                                     <h3>Certifications</h3>
                                     <div class="cert-logos">
-                                            <div class="cert-logos">
-                                                <a onclick="openCertModal('anssi')" style="cursor:pointer;">
-                                                    <img src="images/logo/logo_anssi.png" alt="Logo ANSSI" class="cert-logo">
-                                                </a>
-                                                <a onclick="openCertModal('cyber')" style="cursor:pointer;">
-                                                    <img src="images/logo/intro_cyber.png" alt="Logo Introduction Cybersécurité" class="cert-logo">
-                                                </a>
+                                        <a href="#" onclick="openCertModal('anssi');return false;" style="cursor:pointer;">
+                                            <img src="images/logo/logo_anssi.png" alt="Logo ANSSI" class="cert-logo">
+                                        </a>
+                                        <a href="#" onclick="openCertModal('cyber');return false;" style="cursor:pointer;">
+                                            <img src="images/logo/intro_cyber.png" alt="Logo Introduction Cybersécurité" class="cert-logo">
+                                        </a>
             <!-- Modale ANSSI -->
             <div id="modal-anssi" class="cert-modal" style="display:none;">
                 <div class="cert-modal-content">
@@ -137,20 +136,23 @@
             </div>
         <script>
         function openCertModal(cert) {
-            document.getElementById('modal-' + cert).style.display = 'block';
+            var modal = document.getElementById('modal-' + cert);
+            if (modal) modal.style.display = 'block';
         }
         function closeCertModal(cert) {
-            document.getElementById('modal-' + cert).style.display = 'none';
+            var modal = document.getElementById('modal-' + cert);
+            if (modal) modal.style.display = 'none';
         }
-        // Fermer la modale si on clique en dehors du contenu
-        window.onclick = function(event) {
+        // Fermer la modale si on clique en dehors du contenu ou sur la croix
+        document.addEventListener('click', function(event) {
             ['anssi','cyber'].forEach(function(cert) {
                 var modal = document.getElementById('modal-' + cert);
-                if (modal && event.target === modal) {
+                if (!modal) return;
+                if (event.target === modal || event.target.classList.contains('cert-modal-close')) {
                     modal.style.display = 'none';
                 }
             });
-        }
+        });
         </script>
                                             </div>
             <script>
