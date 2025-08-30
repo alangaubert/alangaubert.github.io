@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Portfolio | Alan Gaubert</title>
+        <link rel="stylesheet" href="styles/css/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a class="logo" href="index.html">Mon Portfolio</a>
+                <ul class="nav-links">
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#projects">Projets</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+                        <section id="presentation" class="section-block presentation-section">
+                            <div class="presentation-container">
+                                <div class="presentation-text">
+                                    <h1>Bienvenue !</h1>
+                                    <h2>Je m'appelle Alan Gaubert</h2>
+                                    <p>
+                                        Actuellement, j'étudie à l'IUT de Béthune. Je suis en Réseaux et Télécommunications en deuxième année. J'ai choisis R&T car j'avais dans l'optique de devenir Administrateur Réseau mais j'aimerais explorer les autres branches au sein du réseau. Cette formation me plaît beaucoup, en effet, étant curieux et ayant eu une passion pour l'informatique assez tôt, le réseau est ce qui rythme ma vie. À l'heure d'aujourd'hui je pense continuer les études après R&T.  Je suis également musicien et coprésident de Music Artois, association de musique au sein de l'IUT de Béthune.
+                                    </p>
+                                    <div class="social-links">
+                                        <a href="https://www.linkedin.com/in/alan-gaubert-051618339/" aria-label="LinkedIn" class="social-link" target="_blank">
+                                            <i class="bi bi-linkedin"></i> LinkedIn
+                                        </a>
+                                        <a href="https://github.com/alangaubert" aria-label="GitHub" class="social-link" target="_blank">
+                                            <i class="bi bi-github"></i> GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="presentation-photo">
+                                    <img src="https://i.ibb.co/GQgfWWyQ/photo-concert.png" alt="Photo d'accueil">
+                                </div>
+                            </div>
+                        </section>
+
+                                <section class="section-block quick-nav-section">
+            <h2>Découvrir mon univers</h2>
+            <div class="quick-nav-grid">
+                <a class="quick-nav-card" href="etudes.html">
+                    <span class="quick-nav-title">Études</span>
+                    <span class="quick-nav-desc">Mon parcours et mes réalisations scolaires</span>
+                </a>
+                <a class="quick-nav-card" href="photographie.html">
+                    <span class="quick-nav-title">Photographie</span>
+                    <span class="quick-nav-desc">Quelques-unes de mes photos préférées</span>
+                </a>
+                <a class="quick-nav-card" href="projets.html">
+                    <span class="quick-nav-title">Projets</span>
+                    <span class="quick-nav-desc">Projets personnels, associatifs, etc.</span>
+                </a>
+                <a class="quick-nav-card" href="code.html">
+                    <span class="quick-nav-title">Code</span>
+                    <span class="quick-nav-desc">Voir mes codes et dépôts GitHub</span>
+                </a>
+            </div>
+        </section>
+                    <section class="section-block cv-section">
+                        <h2>Curriculum Vitae / Compétences / Certification</h2>
+                        <div class="cv-content">
+                            <h3>CV</h3>
+
+                            <h4>Profil</h4>
+                            <p>
+                                Passionné par les nouvelles technologies et toujours curieux d'apprendre,je cherche constamment à développer mes compétences dans ce domaine. étant spontané, chercher la solution aux divers problèmes est une facilité pour moi.
+                            </p>
+                            <!-- <h4>Parcours</h4>
+                            <p>
+                                
+                            </p> -->
+
+                            <h4>Formation</h4>
+                            <p>
+                                2024-2027 - BUT Réseaux et télécommunications - IUT de Béthune<br>
+                                2022-2024 - Bac Technologique STI2D (spécialité SIN) - Lycée Paul Duez Cambrai
+                            </p>
+                                <a class="cv-link" href="#" target="_blank">Télécharger mon CV</a>
+                            <h3>Compétences</h3>
+                            <ul class="skills-list">
+                                <h4>Programmation</h4>
+                                <li>Python (bases)</li>
+                                <li>JavaScript (bases)</li>
+                                <li>HTML/CSS</li>
+
+                                <h4>Linux</h4>
+                                <li>Installation d’un environnement Linux</li>
+                                <li>Commandes essentielles</li>
+
+                                <h4>Réseau</h4>
+                                <li>Protocoles réseau (TCP/IP, HTTP, ...)</li>
+                                <li>Configuration de routeurs et commutateurs</li>
+                                <li>Créé un réseau et le configurer</li>
+                                <li>Sécurisé un réseau</li>
+                                <li>Utilisé de l’équipement Cisco</li>
+                            </ul>
+                                    <h3>Certifications</h3>
+                                    <div class="cert-logos">
+                                            <div class="cert-logos">
+                                                <a onclick="openCertModal('anssi')" style="cursor:pointer;">
+                                                    <img src="images/logo/logo_anssi.png" alt="Logo ANSSI" class="cert-logo">
+                                                </a>
+                                                <a onclick="openCertModal('cyber')" style="cursor:pointer;">
+                                                    <img src="images/logo/intro_cyber.png" alt="Logo Introduction Cybersécurité" class="cert-logo">
+                                                </a>
+            <!-- Modale ANSSI -->
+            <div id="modal-anssi" class="cert-modal" style="display:none;">
+                <div class="cert-modal-content">
+                    <span class="cert-modal-close" onclick="closeCertModal('anssi')">&times;</span>
+                    <h4>MOOC ANSSI</h4>
+                    <p>Certification obtenue suite au <a href="https://secnumacademie.gouv.fr/">MOOC de l’ANSSI</a> sur la cybersécurité.</p>
+                    <p>Ce MOOC permet de s'initier à la cybersécurité, approfondir ses connaissances et se protéger et protéger les autres.</p>
+                    <img src="https://i.ibb.co/dJMxzCwC/Attestation-de-suivi-MOOC-ANSSI.jpg" alt="Attestation-de-suivi-MOOC-ANSSI" style="max-width:100%;margin-bottom:1em;">
+                    <a href="/fichier/Attestation_de_suivi_MOOC-ANSSI.pdf" target="_blank" rel="noopener" class="cv-link">Télécharger la certification (PDF)</a>
+                </div>
+            </div>
+            <!-- Modale Cybersécurité -->
+            <div id="modal-cyber" class="cert-modal" style="display:none;">
+                <div class="cert-modal-content">
+                    <span class="cert-modal-close" onclick="closeCertModal('cyber')">&times;</span>
+                    <h4>Introduction à la cybersécurité</h4>
+                    <p>Certification obtenue suite à la <a href="https://www.netacad.com/courses/introduction-to-cybersecurity">formation d’introduction à la cybersécurité de Cisco</a>.</p>
+                    <p>Cette formation permet d'acquérir les compétences de base en cybersécurité et de comprendre les enjeux liés à la sécurité des systèmes d'information.</p>
+                    <img src="https://i.ibb.co/MxG0HxnX/Certif-Intro-cybersecurite.jpg" alt="Certif-Intro-cybersecurite" style="max-width:100%;margin-bottom:1em;">
+                    <a href="/fichier/Certif_Intro_cybersecurite.pdf" target="_blank" rel="noopener" class="cv-link">Télécharger la certification (PDF)</a>
+                </div>
+            </div>
+        <script>
+        function openCertModal(cert) {
+            document.getElementById('modal-' + cert).style.display = 'block';
+        }
+        function closeCertModal(cert) {
+            document.getElementById('modal-' + cert).style.display = 'none';
+        }
+        // Fermer la modale si on clique en dehors du contenu
+        window.onclick = function(event) {
+            ['anssi','cyber'].forEach(function(cert) {
+                var modal = document.getElementById('modal-' + cert);
+                if (modal && event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+        </script>
+                                            </div>
+            <script>
+                function openCertModal(id) {
+                    document.getElementById('modal-' + id).style.display = 'flex';
+                }
+                function closeCertModal(event, id) {
+                    if (event.target.classList.contains('cert-modal') || event.target.classList.contains('cert-modal-close')) {
+                        document.getElementById('modal-' + id).style.display = 'none';
+                    }
+                }
+            </script>
+                        </div>
+                    </section>
+
+
+                <!--
+                <section id="projects" class="section-block">
+                    <h2>Mes Projets</h2>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <h3>Projet 1</h3>
+                            <p>Description du projet 1.</p>
+                        </div>
+                        <div class="project-card">
+                            <h3>Projet 2</h3>
+                            <p>Description du projet 2.</p>
+                        </div>
+                    </div>
+                </section>
+                <section id="contact" class="section-block">
+                    <h2>Contact</h2>
+                    <form>
+                        <input type="text" placeholder="Votre nom" required />
+                        <input type="email" placeholder="Votre email" required />
+                        <textarea placeholder="Votre message" required></textarea>
+                        <button type="submit">Envoyer</button>
+                    </form>
+                </section>
+                -->
+        </main>
+        <footer>
+            <p>&copy; 2025 Alan Gaubert. Tous droits réservés.</p>
+        </footer>
+    </body>
+</html>
