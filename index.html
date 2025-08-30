@@ -13,7 +13,7 @@
     <body>
         <header>
             <nav>
-                <div class="logo">Mon Portfolio</div>
+                <a class="logo" href="index.html">Mon Portfolio</a>
                 <ul class="nav-links">
                     <li><a href="#about">À propos</a></li>
                     <li><a href="#projects">Projets</a></li>
@@ -40,7 +40,7 @@
                                     </div>
                                 </div>
                                 <div class="presentation-photo">
-                                    <img src="images/photo_concert.png" alt="Photo de profil" />
+                                    <img src="https://i.ibb.co/GQgfWWyQ/photo-concert.png" alt="Photo d'accueil">
                                 </div>
                             </div>
                         </section>
@@ -106,13 +106,63 @@
                             </ul>
                                     <h3>Certifications</h3>
                                     <div class="cert-logos">
-                                                    <a href="/fichier/Attestation_de_suivi_MOOC-ANSSI.pdf" target="_blank" title="MOOC ANSSI">
-                                                        <img src="images/logo/logo_anssi.png" alt="Logo ANSSI" class="cert-logo" />
-                                                    </a>
-                                                    <a href="/fichier/Certif_Intro-cybersécurité.pdf" target="_blank" title="Introduction à la cybersécurité">
-                                                        <img src="images/logo/intro_cyber.png" alt="Logo Introduction Cybersécurité" class="cert-logo" />
-                                                    </a>
-                                    </div>
+                                            <div class="cert-logos">
+                                                <a onclick="openCertModal('anssi')" style="cursor:pointer;">
+                                                    <img src="images/logo/logo_anssi.png" alt="Logo ANSSI" class="cert-logo">
+                                                </a>
+                                                <a onclick="openCertModal('cyber')" style="cursor:pointer;">
+                                                    <img src="images/logo/intro_cyber.png" alt="Logo Introduction Cybersécurité" class="cert-logo">
+                                                </a>
+            <!-- Modale ANSSI -->
+            <div id="modal-anssi" class="cert-modal" style="display:none;">
+                <div class="cert-modal-content">
+                    <span class="cert-modal-close" onclick="closeCertModal('anssi')">&times;</span>
+                    <h4>MOOC ANSSI</h4>
+                    <p>Certification obtenue suite au <a href="https://secnumacademie.gouv.fr/">MOOC de l’ANSSI</a> sur la cybersécurité.</p>
+                    <p>Ce MOOC permet de s'initier à la cybersécurité, approfondir ses connaissances et se protéger et protéger les autres.</p>
+                    <img src="https://i.ibb.co/dJMxzCwC/Attestation-de-suivi-MOOC-ANSSI.jpg" alt="Attestation-de-suivi-MOOC-ANSSI" style="max-width:100%;margin-bottom:1em;">
+                    <a href="/fichier/Attestation_de_suivi_MOOC-ANSSI.pdf" target="_blank" rel="noopener" class="cv-link">Télécharger la certification (PDF)</a>
+                </div>
+            </div>
+            <!-- Modale Cybersécurité -->
+            <div id="modal-cyber" class="cert-modal" style="display:none;">
+                <div class="cert-modal-content">
+                    <span class="cert-modal-close" onclick="closeCertModal('cyber')">&times;</span>
+                    <h4>Introduction à la cybersécurité</h4>
+                    <p>Certification obtenue suite à la <a href="https://www.netacad.com/courses/introduction-to-cybersecurity">formation d’introduction à la cybersécurité de Cisco</a>.</p>
+                    <p>Cette formation permet d'acquérir les compétences de base en cybersécurité et de comprendre les enjeux liés à la sécurité des systèmes d'information.</p>
+                    <img src="https://i.ibb.co/MxG0HxnX/Certif-Intro-cybersecurite.jpg" alt="Certif-Intro-cybersecurite" style="max-width:100%;margin-bottom:1em;">
+                    <a href="/fichier/Certif_Intro_cybersecurite.pdf" target="_blank" rel="noopener" class="cv-link">Télécharger la certification (PDF)</a>
+                </div>
+            </div>
+        <script>
+        function openCertModal(cert) {
+            document.getElementById('modal-' + cert).style.display = 'block';
+        }
+        function closeCertModal(cert) {
+            document.getElementById('modal-' + cert).style.display = 'none';
+        }
+        // Fermer la modale si on clique en dehors du contenu
+        window.onclick = function(event) {
+            ['anssi','cyber'].forEach(function(cert) {
+                var modal = document.getElementById('modal-' + cert);
+                if (modal && event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+        </script>
+                                            </div>
+            <script>
+                function openCertModal(id) {
+                    document.getElementById('modal-' + id).style.display = 'flex';
+                }
+                function closeCertModal(event, id) {
+                    if (event.target.classList.contains('cert-modal') || event.target.classList.contains('cert-modal-close')) {
+                        document.getElementById('modal-' + id).style.display = 'none';
+                    }
+                }
+            </script>
                         </div>
                     </section>
 

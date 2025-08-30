@@ -1,3 +1,81 @@
+/* Modale certifications (lightbox blanche) */
+.cert-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.75);
+  align-items: center;
+  justify-content: center;
+}
+.cert-modal-content {
+  background: #fff;
+  border-radius: 16px;
+  max-width: 900px;
+  width: 98vw;
+  max-height: 90vh;
+  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+  position: relative;
+  text-align: left;
+  animation: certModalIn 0.2s;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@keyframes certModalIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.cert-modal-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  color: #222;
+  font-size: 2.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 2100;
+  transition: color 0.2s;
+}
+.cert-modal-close:hover {
+  color: #f39c12;
+}
+.cert-modal-content h4 {
+  margin-top: 0;
+  color: #f39c12;
+  font-size: 1.25rem;
+  margin-bottom: 0.7rem;
+}
+.cert-modal-content p {
+  color: #444;
+  margin-bottom: 1.2rem;
+}
+.cert-modal-content embed {
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  background: #fafafa;
+  min-height: 400px;
+  max-height: 60vh;
+  width: 100%;
+  margin-top: 1.2rem;
+}
+/* Logo header cliquable sans soulignement et blanc */
+a.logo {
+  color: #fff !important;
+  text-decoration: none !important;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  transition: color 0.18s;
+}
+a.logo:hover {
+  color: #f39c12 !important;
+}
 /* Résultat visible pour l'exécution de code */
 .code-output {
   background: #f5f6fa;
@@ -319,13 +397,17 @@
   width: auto;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-  transition: transform 0.18s, box-shadow 0.18s;
+  transition: transform 0.18s, box-shadow 0.18s, filter 0.18s;
   background: #fff;
   padding: 0.5rem;
+  cursor: pointer;
 }
-.cert-logos a:hover .cert-logo {
+/* Effet hover sur le logo de certification */
+.cert-logos a:hover .cert-logo,
+.cert-logo:hover {
   transform: scale(1.08) rotate(-2deg);
   box-shadow: 0 6px 18px rgba(243,156,18,0.18);
+  filter: brightness(1.08) drop-shadow(0 0 6px #f39c12aa);
 }
 /* Bloc CV/Compétences/Certification */
 /* Bloc CV/Compétences/Certification fusionné */
