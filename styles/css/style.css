@@ -1,3 +1,389 @@
+/* Modale certifications (lightbox blanche) */
+.cert-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.75);
+  align-items: center;
+  justify-content: center;
+}
+.cert-modal-content {
+  background: #fff;
+  border-radius: 16px;
+  max-width: 900px;
+  width: 98vw;
+  max-height: 90vh;
+  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+  position: relative;
+  text-align: left;
+  animation: certModalIn 0.2s;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@keyframes certModalIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.cert-modal-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  color: #222;
+  font-size: 2.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 2100;
+  transition: color 0.2s;
+}
+.cert-modal-close:hover {
+  color: #f39c12;
+}
+.cert-modal-content h4 {
+  margin-top: 0;
+  color: #f39c12;
+  font-size: 1.25rem;
+  margin-bottom: 0.7rem;
+}
+.cert-modal-content p {
+  color: #444;
+  margin-bottom: 1.2rem;
+}
+.cert-modal-content embed {
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  background: #fafafa;
+  min-height: 400px;
+  max-height: 60vh;
+  width: 100%;
+  margin-top: 1.2rem;
+}
+/* Logo header cliquable sans soulignement et blanc */
+a.logo {
+  color: #fff !important;
+  text-decoration: none !important;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  transition: color 0.18s;
+}
+a.logo:hover {
+  color: #f39c12 !important;
+}
+/* Résultat visible pour l'exécution de code */
+.code-output {
+  background: #f5f6fa;
+  color: #222;
+  border-radius: 8px;
+  margin-top: 1rem;
+  padding: 1rem;
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  font-size: 1.08rem;
+  min-height: 1.2em;
+  white-space: pre-wrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  display: none;
+}
+/* Page code : blocs, actions, exécution */
+.code-section h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+}
+.code-intro {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2.2rem;
+}
+.code-block {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 2.2rem 1.5rem;
+  margin-bottom: 2.2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.code-block h2 {
+  font-size: 1.15rem;
+  margin-bottom: 0.7rem;
+  color: #f39c12;
+}
+.code-block pre {
+  background: #222;
+  color: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 1.05rem;
+  overflow-x: auto;
+  margin-bottom: 1.1rem;
+}
+.code-actions {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.code-github {
+  color: #fff;
+  background: #222;
+  padding: 0.5rem 1.1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.2s;
+}
+.code-github:hover {
+  background: #f39c12;
+  color: #222;
+}
+.code-run {
+  color: #fff;
+  background: #f39c12;
+  border: none;
+  padding: 0.5rem 1.1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.code-run:hover {
+  background: #222;
+  color: #f39c12;
+}
+.code-result {
+  width: 100%;
+  border: none;
+  background: #fafafa;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+/* Page études */
+.etudes-section h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+}
+.etudes-intro {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2.2rem;
+}
+.etudes-timeline {
+  max-width: 900px;
+  margin: 0 auto 2.5rem auto;
+  border-left: 4px solid #f39c12;
+  padding-left: 2.2rem;
+}
+.etape {
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+.etape-date {
+  position: absolute;
+  left: -6.2rem;
+  top: 0.2rem;
+  font-size: 1.1rem;
+  color: #f39c12;
+  font-weight: bold;
+  min-width: 5.5rem;
+  text-align: right;
+}
+.etape-content h2 {
+  font-size: 1.15rem;
+  margin-bottom: 0.3rem;
+  color: #222;
+}
+.etape-content p {
+  margin: 0 0 0.5rem 0;
+  color: #888;
+}
+.etape-content ul {
+  margin: 0 0 0 1.2rem;
+  color: #444;
+}
+.etudes-projets {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 2rem 1.5rem;
+}
+.etudes-projets h2 {
+  color: #f39c12;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.etudes-projets ul {
+  color: #444;
+  margin-left: 1.2rem;
+}
+/* Page projets */
+.projets-section h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+}
+.projets-intro {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2.2rem;
+}
+.projets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.projet-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 2.2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+.projet-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 6px 24px rgba(243,156,18,0.13);
+}
+.projet-card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.7rem;
+  color: #f39c12;
+}
+.projet-desc {
+  font-size: 1.05rem;
+  color: #444;
+  margin-bottom: 1.2rem;
+}
+.projet-link {
+  color: #fff;
+  background: #222;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.projet-link:hover {
+  background: #f39c12;
+  color: #222;
+}
+/* Description sous l'intro de la galerie photo */
+.photo-desc {
+  text-align: center;
+  color: #888;
+  font-size: 1rem;
+  margin-bottom: 2.2rem;
+  margin-top: -1.2rem;
+}
+/* Lightbox galerie photo */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.85);
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 12px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.25);
+  background: #fff;
+}
+.lightbox-close {
+  position: absolute;
+  top: 2.5rem;
+  right: 3.5rem;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1100;
+  text-shadow: 0 2px 8px #000;
+  transition: color 0.2s;
+}
+.lightbox-close:hover {
+  color: #f39c12;
+}
+/* Galerie photo */
+.photo-section h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+}
+.photo-intro {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2.2rem;
+}
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.8rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.photo-thumb {
+  width: 100%;
+  max-height: 420px;
+  min-height: 260px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+  transition: transform 0.18s, box-shadow 0.18s;
+  background: #fff;
+}
+.photo-grid a:hover .photo-thumb {
+  transform: scale(1.04) rotate(-1deg);
+  box-shadow: 0 6px 24px rgba(243,156,18,0.18);
+}
+/* Liens sociaux personnalisés */
+.social-link {
+  color: #f39c12;
+  text-decoration: none;
+  font-weight: 600;
+  margin-right: 1.2rem;
+  transition: color 0.18s;
+  font-size: 1.1em;
+  display: inline-flex;
+  align-items: center;
+}
+.social-link:last-child {
+  margin-right: 0;
+}
+.social-link i {
+  font-size: 1.4em;
+  margin-right: 0.4em;
+  vertical-align: middle;
+}
+.social-link:hover {
+  color: #222;
+}
 /* Logos de certifications */
 .cert-logos {
   display: flex;
@@ -11,13 +397,17 @@
   width: auto;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-  transition: transform 0.18s, box-shadow 0.18s;
+  transition: transform 0.18s, box-shadow 0.18s, filter 0.18s;
   background: #fff;
   padding: 0.5rem;
+  cursor: pointer;
 }
-.cert-logos a:hover .cert-logo {
+/* Effet hover sur le logo de certification */
+.cert-logos a:hover .cert-logo,
+.cert-logo:hover {
   transform: scale(1.08) rotate(-2deg);
   box-shadow: 0 6px 18px rgba(243,156,18,0.18);
+  filter: brightness(1.08) drop-shadow(0 0 6px #f39c12aa);
 }
 /* Bloc CV/Compétences/Certification */
 /* Bloc CV/Compétences/Certification fusionné */

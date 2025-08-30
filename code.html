@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code | Alan Gaubert</title>
+    <link rel="stylesheet" href="styles/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+  <a class="logo" href="index.html">Mon Portfolio</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="code.html">Code</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="section-block code-section">
+        <h1>Mes exemples de code</h1>
+        <p class="code-intro">Retrouve ici des extraits de code, des mini-projets ou des algorithmes, avec un accès direct au dépôt GitHub et la possibilité d’exécuter le code (pour HTML/JS).</p>
+        <div class="code-block">
+          <h2>Exemple : Calcul de la somme (JavaScript)</h2>
+          <pre><code id="code1">function somme(a, b) {
+  return a + b;
+}
+console.log(somme(2, 3)); // 5</code></pre>
+          <div class="code-actions">
+            <a href="https://github.com/tonprofil/tonrepo" class="code-github" target="_blank">
+              <i class="bi bi-github"></i> Voir sur GitHub
+            </a>
+            <button class="code-run" onclick="runCode('code1')">Exécuter</button>
+          </div>
+          <div id="output-code1" class="code-output"></div>
+        </div>
+        <!-- Duplique le bloc ci-dessus pour chaque code à présenter -->
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2025 Alan Gaubert. Tous droits réservés.</p>
+    </footer>
+    <script>
+      function runCode(codeId) {
+        var code = document.getElementById(codeId).innerText;
+        var outputDiv = document.getElementById('output-' + codeId);
+        let result = '';
+        // Redéfinir console.log pour capturer la sortie
+        const originalLog = console.log;
+        console.log = function(...args) {
+          result += args.join(' ') + '\n';
+          originalLog.apply(console, args);
+        };
+        try {
+          eval(code);
+        } catch (e) {
+          result += 'Erreur : ' + e.message;
+        }
+        console.log = originalLog;
+        outputDiv.textContent = result.trim();
+        outputDiv.style.display = 'block';
+      }
+    </script>
+  </body>
+</html>
